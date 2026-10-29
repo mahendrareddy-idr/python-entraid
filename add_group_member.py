@@ -4,19 +4,19 @@ from graph_client import GRAPH_BASE_URL, GraphClient, parse_object_id
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
+    parser1 = argparse.ArgumentParser(
         description="Add a user, group, or service principal to a group."
     )
-    parser.add_argument(
+    parser1.add_argument(
         "--group-id", required=True, type=parse_object_id, help="Object ID of the group."
     )
-    parser.add_argument(
+    parser1.add_argument(
         "--member-id",
         required=True,
         type=parse_object_id,
         help="Object ID of the member.",
     )
-    args = parser.parse_args()
+    args = parser1.parse_args()
 
     GraphClient().request(
         "POST",
